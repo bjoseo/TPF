@@ -65,21 +65,26 @@ createApp({
       // Construye la URL para recuperar el usuario especificado
       var usuario = document.getElementsByName("mail")[0].value;
       const url = this.url + "/" + usuario;
-      fetch(url)
+      var options = {
+        method: "GET", // Establece el método HTTP como DELETE
+      };
+      fetch(url, options)
         .then((response) => response.json())
+        
         .then((data) => {
           const Usu = data.nombre;
           sessionStorage.setItem("usu", JSON.stringify(Usu));
         })
+        
         .then(function () {
           window.location.href = "/index.html"; // Redirigir a la página de inicio
-        })
+      })
 
         .catch((err) => {
           console.error(err);
           this.error = true;
         });
-    },
+      },
 
     grabar() {
       /* El método grabar se encarga de guardar los datos de un nuevo usuario en el servidor. 
