@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mochileando</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/pages/style_pages.css">
+    <link rel="stylesheet" href="/pages/login/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="/assets/logo_1.png">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Header" id="div-header">
+        </div>
+        <div class="Main">
+            <div id="central">
+                <div id="login">
+                    <div class="div-logo">
+                        <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+                        <lord-icon id="logo" src="https://cdn.lordicon.com/vkweisbr.json" trigger="loop-on-hover"
+                            delay="2000" colors="outline:#121331,primary:#646e78,secondary:#2ca58d,tertiary:#1d4e89"
+                            style="width:100px;height:100px"> </lord-icon>
+                        <h2 class="welcome">BIENVENIDOS</h2>
+                    </div>
+                    <div id="app">
+                        <form class="cuadro" method="get">
+                            <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Correo electronico"
+                                required autofocus>
+                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña"
+                                required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="remember-me"> Recordarme
+                                </label>
+                                <button type="submit" class="btn btn-success" v-on:click="getUsuario()">Iniciar sesión</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="pie-form">
+                        <a href="/pages/error_404/error_404.html">¿Olvidaste tu contraseña?</a>
+                        <a href="/pages//login/usuario-create.html">¿No tienes Cuenta? Registrate</a>
+                        <a href="/pages/error_404/error_404.html">← Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Footer footer-content-wrapper" id="div-footer">
+        </div>
+    </div>
+    
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/usuarios.js"></script>
+    <script src="/elements.js"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>
