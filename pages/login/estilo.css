@@ -166,6 +166,14 @@ button[type="submit"]:hover {
     color: #000000;
 }
 
+.usuario-box{
+    color: #f7f6fa;
+    padding: 0px 16px;
+    font-size: 0.75rem;
+  
+  }
+  
+
 @media screen and (max-width:480px){
 .div-logo{
     display: none

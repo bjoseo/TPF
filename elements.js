@@ -46,9 +46,11 @@ let header = document.getElementById('div-header').innerHTML = `
             <a href="javascript:void(0);" class="icon" onclick="burguerMenu()">
               <i class="fa fa-bars"></i>
             </a>
+
             <div class="usuario-box" id="usuario-container">
-            <p id="usu-value" class="usu-weather"></p>
-            </div>
+            <h2 id="usu-value" class="text-weather"></h2>
+          </div>
+
             <div class="weather-box" id="weather-container">
               <div class="weather_1" id="weather-cont1">
                 <h2 id="location" class="text-weather"></h2>

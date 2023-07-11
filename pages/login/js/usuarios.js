@@ -65,26 +65,69 @@ createApp({
       // Construye la URL para recuperar el usuario especificado
       var usuario = document.getElementsByName("mail")[0].value;
       const url = this.url + "/" + usuario;
+      console.log(url);
+      //alert("URL para recuperar usuario");
       var options = {
-        method: "GET", // Establece el método HTTP como DELETE
+        method: "GET", // Establece el método HTTP como GET
       };
       fetch(url, options)
         .then((response) => response.json())
-        
+
         .then((data) => {
           const Usu = data.nombre;
-          sessionStorage.setItem("usu", JSON.stringify(Usu));
+//          sessionStorage.setItem("usu", JSON.stringify(Usu));
+          sessionStorage.setItem("nombre", data.nombre);
+          //alert("sessionStorage");
         })
-        
+
         .then(function () {
           window.location.href = "/index.html"; // Redirigir a la página de inicio
-      })
+          //alert("window.location.href");
+        })
 
         .catch((err) => {
           console.error(err);
           this.error = true;
+          //alert("EROR en recuperar usuario");
         });
-      },
+      //console.log(data);
+      //alert("ver que hay en data");
+    },
+
+    recUsuario() {
+      // Construye la URL para recuperar el usuario especificado
+      var usuario = document.getElementsByName("mail")[0].value;
+      const url = this.url + "/" + usuario;
+      console.log(url);
+      alert("URL para recuperar usuario");
+
+//      fetch("https://jose14056411.pythonanywhere.com/usuarios/correo2@gmail.com")
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Process the response data
+          const Usu = data.nombre;
+//          sessionStorage.setItem("usu", JSON.stringify(Usu));
+          sessionStorage.setItem("nombre", data.nombre);
+          console.log(data);
+          alert("sessionStorage");
+        })
+        .then(function () {
+          window.location.href = "/index.html"; // Redirigir a la página de inicio
+          alert("window.location.href");
+        })
+
+        .catch((error) => {
+          // Handle any errors that occurred during the request
+          console.error("Error:", error);
+          alert("error");
+        });
+    },
 
     grabar() {
       /* El método grabar se encarga de guardar los datos de un nuevo usuario en el servidor. 
@@ -133,3 +176,60 @@ function obtenerValor() {
   document.getElementById("demo2").innerHTML = y;
   alert("Stop getUsuario tres");
 }
+
+/*
+if (typeof(Storage) !== 'undefined') {
+  // Código cuando Storage es compatible
+} else {
+ // Código cuando Storage NO es compatible
+}
+
+Guardar datos en Storage
+
+localStorage
+
+// Opción 1 ->  localStorage.setItem(name, content)
+// Opción 2 ->localStorage.name = content
+// name = nombre del elemento
+// content = Contenido del elemento
+
+localStorage.setItem('Nombre', 'Miguel Antonio')
+localStorage.Apellido = 'Márquez Montoya'
+
+sessionStorage
+
+// Opción 1 ->  sessionStorage.setItem(name, content)
+// Opción 2 ->sessionStorage.name = content
+// name = nombre del elemento
+// content = Contenido del elemento
+
+sessionStorage.setItem('Nombre', 'Miguel Antonio')
+sessionStorage.Apellido = 'Márquez Montoya'
+
+Recuperar datos de Storage
+
+localStorage
+
+// Opción 1 -> localStorage.getItem(name, content)
+// Opción 2 -> localStorage.name
+
+// Obtenemos los datos y los almacenamos en variables
+let firstName = localStorage.getItem('Nombre'),
+    lastName  = localStorage.Apellido
+
+console.log(`Hola, mi nombre es ${firstName} ${lastName}`)
+// Imprime: Hola, mi nombre es Miguel Antonio Márquez Montoya
+
+sessionStorage
+
+// Opción 1 -> sessionStorage.getItem(name, content)
+// Opción 2 -> sessionStorage.name
+
+// Obtenemos los datos y los almacenamos en variables
+let firstName = sessionStorage.getItem('Nombre'),
+    lastName  = sessionStorage.Apellido
+
+console.log(`Hola, mi nombre es ${firstName} ${lastName}`)
+// Imprime: Hola, mi nombre es Miguel Antonio Márquez Montoya
+
+*/

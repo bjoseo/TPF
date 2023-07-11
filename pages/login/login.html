@@ -38,15 +38,16 @@
                     </div>
                     <div id="app">
                         <form class="cuadro" method="get">
-                            <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Correo electronico"
-                                required autofocus>
-                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña"
-                                required>
+                            <input type="email" id="inputEmail" name="mail" class="form-control"
+                                placeholder="Correo electronico" required autofocus>
+                            <input type="password" id="inputPassword" name="password" class="form-control"
+                                placeholder="Contraseña" required>
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="remember-me"> Recordarme
                                 </label>
-                                <button type="submit" class="btn btn-success" v-on:click="getUsuario()">Iniciar sesión</button>
+                                <button type="submit" class="btn btn-success" v-on:click="recUsuario()">Iniciar
+                                    sesión</button>
                             </div>
                         </form>
                     </div>
@@ -61,7 +62,7 @@
         <div class="Footer footer-content-wrapper" id="div-footer">
         </div>
     </div>
-    
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
